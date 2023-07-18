@@ -15,7 +15,7 @@ describe("Iteration 4", () => {
       {
         _id: "a1",
         image_url: "https://image1.jpg",
-        name: "Beer 1",
+        name: "Buzz",
         tagline: "Tagline 1",
         contributed_by: "Contributor 1",
       },
