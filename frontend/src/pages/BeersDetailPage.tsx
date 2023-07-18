@@ -10,7 +10,7 @@ export const BeersDetailPage = () => {
     const fetchBeer = async () => {
       try {
         const response = await fetch(
-          `https://f5-beers-065cad3017be.herokuapp.com/beers/${beerId}`
+          `http://localhost:3000/beer/${beerId}`
         );
         const data = await response.json();
         setBeer(data);

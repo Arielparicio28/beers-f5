@@ -38,7 +38,7 @@ export const AddBeerPage = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "https://f5-beers-065cad3017be.herokuapp.com/beers",
+        "http://localhost:3000/beer",
         newBeer
       );
       console.log("Response", response.data);
