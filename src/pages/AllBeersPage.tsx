@@ -4,7 +4,7 @@ import { Beer } from "../components/BeerInterface";
 
 export const AllBeersPage: React.FC = () => {
   const [beers, setBeers] = useState<Beer[]>([]);
-  const [searchQuery, setSearchQuery] = useState("");
+  const [search, setSearch] = useState("");
 
   useEffect(() => {
     const fetchBeers = async () => {
@@ -23,11 +23,11 @@ export const AllBeersPage: React.FC = () => {
   }, []);
 
   const handleSearchInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSearchQuery(e.target.value);
+    setSearch(e.target.value);
   };
 
-  const filteredBeers = beers.filter((beer) =>
-    beer.name.toLowerCase().includes(searchQuery.toLowerCase())
+  const filtrarCervezas = beers.filter((beer) =>
+    beer.name.toLowerCase().includes(search.toLowerCase())
     
   );
 
@@ -35,13 +35,13 @@ export const AllBeersPage: React.FC = () => {
     <div>
       <input
         type="text"
-        value={searchQuery}
+        value={search}
         onChange={handleSearchInputChange}
         className="bg-gray"
         placeholder="Buscar cervezas..."
       />
       <ul>
-        {filteredBeers.map((beer) => (
+        {filtrarCervezas.map((beer) => (
           <li key={beer._id} className="">
             <div className="d-flex justify-content-center p-3">
               <Link to={`/beers/${beer._id}`}>
